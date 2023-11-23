@@ -24,6 +24,7 @@ class PostFactory extends Factory
             'is_featured' => fake()->boolean(35),
             'published_at' => fake()->optional()->dateTimeBetween('-1 year', 'now'),
             'author_id' => fake()->numberBetween(1, 10),
+
         ];
     }
 

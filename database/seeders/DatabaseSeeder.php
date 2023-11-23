@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
         $posts = \App\Models\Post::factory(10)->create();
 
         foreach($posts as $post) {
-            $post->categories()->attach([rand(1,5)]);
+            $post->categories()->attach([$post->author->mentor_id]);
         }
 
         User::create([

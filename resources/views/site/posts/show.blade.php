@@ -1,7 +1,7 @@
 <x-site-layout title="{{$post->title}}">
 
     <video  width=50% height="auto" autoplay muted  class="rounded-l h-full group-hover:scale-110 transition duration-500 cursor-pointer object-cover ">
-        <source src="{{$post->media->first()->getUrl()}}" type="video/mp4">
+        <source src="{{$post->media->first() ? $post->media->first()->getUrl() : "demo.mp4"}}" type="video/mp4">
     </video>
 
     @foreach($post->categories as $category)

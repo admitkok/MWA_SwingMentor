@@ -13,7 +13,7 @@ class PostController extends Controller
             ->with(['author', 'categories', 'media'])
             ->whereNotNull('published_at')
             ->orderBy('published_at', 'desc')
-            ->paginate(6);
+            ->paginate(8);
 
         return view('site.posts.index', [
             'posts' => $posts,

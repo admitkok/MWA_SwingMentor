@@ -20,8 +20,11 @@ require __DIR__.'/auth.php';
 Route::view('/dashboard', 'dashboard')->middleware(['auth', 'verified'])->name('dashboard');
 Route::prefix('home')->name('home.')->middleware('auth')->group(function () {
     Route::resource('posts', \App\Http\Controllers\Home\PostController::class);
+    Route::resource('categories', \App\Http\Controllers\Home\CategoryController::class);
     Route::get('posts/{post}/toggle-publish', [\App\Http\Controllers\Home\PostTogglePublishController::class, 'toggle'])->name('posts.toggle-publish');
-
+    Route::get('categories', [\App\Http\Controllers\Home\CategoryController::class, 'index'])->name('categories.index');
+    Route::get('categories/{category}/toggle-change', [\App\Http\Controllers\Home\CategoryToggleChangeController::class, 'toggle'])->name('category.toggle-change');
+    Route::get('categories/{id}', [\App\Http\Controllers\Home\CategoryController::class, 'show'])->name('categories.show');
 });
 
 Route::middleware('auth')->group(function () {

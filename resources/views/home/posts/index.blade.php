@@ -1,12 +1,11 @@
-<x-site-layout title="USER ZONE - MY POSTS">
+<x-site-layout title="My posts">
 
     <x-crud-message/>
 
     <div class="px-4 sm:px-6 lg:px-8">
         <div class="sm:flex sm:items-center">
             <div class="sm:flex-auto">
-                <h1 class="text-base font-semibold leading-6 text-gray-900">My posts</h1>
-                <p class="mt-2 text-sm text-gray-700">A list of all the posts you wrote.</p>
+                <h1 class="text-base font-semibold leading-6 text-gray-100">Uploaded posts</h1>
             </div>
             <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
                 <a href="{{route('home.posts.create')}}" class="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Write a new post</a>
@@ -40,7 +39,7 @@
                                     @endif
                                 </td>
                                 <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                                    <a href="{{route('home.posts.edit', $post)}}" class="text-indigo-600 hover:text-indigo-900">Edit<span class="sr-only">, Lindsay Walton</span></a>
+                                    <a href="{{route('home.posts.edit', $post->slug)}}" class="text-indigo-600 hover:text-indigo-900"><span class="sr-only">, Lindsay Walton</span></a>
                                 </td>
                             </tr>
                             @endforeach

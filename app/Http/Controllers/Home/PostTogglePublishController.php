@@ -11,7 +11,7 @@ class PostTogglePublishController extends Controller
     public function toggle(Post $post)
     {
         if( auth()->id() !== $post->author_id) {
-            //abort(401, 'you are not allowed to publish another one s post');
+            abort(401, 'you are not allowed to publish another one s post');
 
             session()->flash('error_notification', "You are not authorized for changes to Post '{$post->title}'");
 

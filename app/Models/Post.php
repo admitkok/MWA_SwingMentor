@@ -48,6 +48,7 @@ class Post extends Model implements HasMedia
         return $this->belongsToMany(Category::class);
     }
 
+
     // Medialibrary settings ----------------------------------------------------------
     public function registerMediaConversions(Media $media = null): void
     {

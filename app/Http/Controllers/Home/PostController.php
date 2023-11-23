@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
@@ -55,12 +56,13 @@ class PostController extends Controller
             'published_at' => null,
             'author_id' => auth()->id(),
         ]);
-
+        $post->categories()->attach([$post->author->mentor_id]);
         if($request->hasFile('video')) {
             $post->addMediaFromRequest('video')->toMediaCollection();
         }
 
-//        session()->flash('success_notification', "Post '{$post->title}' created.");
+
+        session()->flash('success_notification', "Post '{$post->title}' created.");
 
         return redirect()->route('home.posts.index');
     }

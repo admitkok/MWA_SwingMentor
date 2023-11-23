@@ -23,6 +23,7 @@ class SiteLayoutNavbar extends Component
 
         $this->home_menu_items = [
             ['label' => 'My posts', 'route' => 'home.posts.index', 'url' => null],
+            ['label' => 'My mentor', 'route' => 'home.categories.index', 'url' => null],
         ];
 
         $this->admin_menu_items = [

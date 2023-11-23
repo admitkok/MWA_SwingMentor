@@ -18,7 +18,7 @@ return new class extends Migration
             $table->boolean('is_author')->default(false);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->integer('mentor_id')->default(1);
+            $table->foreignId('mentor_id')->default(1);
             $table->rememberToken();
 
             $table->softDeletes();

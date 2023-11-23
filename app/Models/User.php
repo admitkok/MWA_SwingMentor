@@ -64,5 +64,10 @@ class User extends Authenticatable
         return $this->hasMany(Post::class, 'author_id');
     }
 
+    public function category()
+    {
+        return $this->hasOne(Category::class, 'mentor_id');
+    }
+
 
 }
