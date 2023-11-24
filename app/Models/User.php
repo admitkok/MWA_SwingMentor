@@ -25,6 +25,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'points'
     ];
 
     /**
@@ -68,6 +69,5 @@ class User extends Authenticatable
     {
         return $this->hasOne(Category::class, 'mentor_id');
     }
-
 
 }

@@ -6,7 +6,7 @@
 
     <ul class="grid grid-cols-4 gap-4">
     @foreach($posts as $post)
-
+        @if($post->author->name != "UNKNOWN AUTHOR")
         <li class="shadow-lg shadow-gray-100/30 bg-gray-100 hover:shadow-lg rounded-lg grid grid-rows-2 grid-cols-1 md:grid-rows-1 overflow-hidden justify-end items-end">
 
             <a href="{{route('posts.show', ['post' => $post])}}" class="h-full bg-red-50 rounded-l overflow-hidden">
@@ -40,6 +40,7 @@
             </div>
 
         </li>
+            @endif
     @endforeach
     </ul>
 

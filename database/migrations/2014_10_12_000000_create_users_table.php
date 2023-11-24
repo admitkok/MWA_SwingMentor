@@ -19,6 +19,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->foreignId('mentor_id')->default(1);
+            $table->foreignId('points')->default(1);
             $table->rememberToken();
 
             $table->softDeletes();

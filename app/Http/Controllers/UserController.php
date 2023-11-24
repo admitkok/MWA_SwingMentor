@@ -8,7 +8,10 @@ class UserController extends Controller
 {
     public function index()
     {
-        $users = User::with('posts')->get();
+        $users = User::all()
+            ->sortByDesc('points');
+
+//        sort($users, ['points','desc']);
 
         return view('site.users.index', [
             'users' => $users,

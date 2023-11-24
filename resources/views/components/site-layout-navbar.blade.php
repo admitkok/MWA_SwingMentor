@@ -76,20 +76,20 @@
                                 <hr class="mt-2">
                             @endauth
 
-                            @if( auth()->user()->is_admin)
-                                <span class="block px-4 py-2 text-xs uppercase text-gray-400 font-semibold">Manage data</span>
-                                @foreach($admin_menu_items as $item)
-                                    @if(request()->routeIs($item['route']))
-                                        <a href="{!! $item['url'] ?? route($item['route']) !!}" class="block px-4 pt-2 text-sm bg-gray-100 text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">{{$item['label']}}</a>
-                                    @else
-                                        <a href="{!! $item['url'] ?? route($item['route']) !!}" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">{{$item['label']}}</a>
-                                    @endif
-                                @endforeach
-                                <hr class="mt-2">
-                            @endif
+{{--                            @if( auth()->user()->is_admin)--}}
+{{--                                <span class="block px-4 py-2 text-xs uppercase text-gray-400 font-semibold">Manage data</span>--}}
+{{--                                @foreach($admin_menu_items as $item)--}}
+{{--                                    @if(request()->routeIs($item['route']))--}}
+{{--                                        <a href="{!! $item['url'] ?? route($item['route']) !!}" class="block px-4 pt-2 text-sm bg-gray-100 text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">{{$item['label']}}</a>--}}
+{{--                                    @else--}}
+{{--                                        <a href="{!! $item['url'] ?? route($item['route']) !!}" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">{{$item['label']}}</a>--}}
+{{--                                    @endif--}}
+{{--                                @endforeach--}}
+{{--                                <hr class="mt-2">--}}
+{{--                            @endif--}}
 
                             <a href="{{route('profile.edit')}}" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Your profile</a>
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
+{{--                            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>--}}
 
                             <form method="POST" action="{{route('logout')}}">
                                 @csrf
